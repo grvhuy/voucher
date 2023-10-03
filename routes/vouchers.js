@@ -7,7 +7,7 @@ router.get('/', voucherControllers.showVouchers);
 
 router.get('/:id', voucherControllers.getVoucher);
 
-router.post('/', voucherControllers.createVoucher);
+router.post('/create', voucherControllers.createVoucher);
 
 router.delete('/:id', voucherControllers.deleteVoucher);
 

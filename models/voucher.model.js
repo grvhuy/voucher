@@ -1,7 +1,6 @@
 const { Schema, model, models } = require('mongoose');
 
 const voucherSchema = new Schema({
-    id: { type: String, required: true },
     name: { type: String },
     startDate: { type: Date },
     expiredDate: { type: Date, required: true },
