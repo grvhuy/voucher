@@ -2,9 +2,9 @@ const Voucher = require("../models/voucher.model");
 const connectToDB = require("../lib/mongoose");
 
 class VoucherController {
-    showVouchers(req, res) {
+    async showVouchers(req, res) {
         connectToDB();
-        Voucher.find({})
+        await Voucher.find({})
             .then((vouchers) => {
                 res.send(vouchers);
             })
@@ -12,6 +12,12 @@ class VoucherController {
                 console.error("Error show vouchers:", error);
             });
     }
+
+    
+    getCreateVoucher(req, res) {
+        res.render('createVoucher');
+    }
+
 
     createVoucher(req, res) {
         connectToDB();

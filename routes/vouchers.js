@@ -5,6 +5,8 @@ const voucherControllers = require("../controllers/voucherController")
 
 router.get('/', voucherControllers.showVouchers);
 
+router.get('/create', voucherControllers.getCreateVoucher);
+
 router.get('/:id', voucherControllers.getVoucher);
 
 router.post('/create', voucherControllers.createVoucher);

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Create Transaction
+  form(action="/transactions/create-transaction", method="post")
+    label(for="amount") Amount:
+    input(type="number", name="amount", id="amount", required)
+    
+    label(for="orderInfo") Order Info:
+    input(type="text", name="orderInfo", id="orderInfo")
+    
+    button(type="submit") Create Transaction

@@ -1,4 +1,4 @@
-const { Schema, model, models } = require('mongoose');
+const { mongoose, Schema, model, models } = require('mongoose');
 
 const voucherSchema = new Schema({
     name: { type: String },
@@ -6,13 +6,13 @@ const voucherSchema = new Schema({
     expiredDate: { type: Date, required: true },
     description: { type: String },
     quantity: { type: Number },
-    paymentType: [
-        {
-            type: String,
-        },
-    ],
-    voucherType: { type: String }, //voucher shipUnit, của shop, voucher cho loại product 
+    paymentType: {type: String},
     minimumOrderValue: { type: Number },
+    voucherScope: {
+        type: String,
+        enum: ['shop', 'product', 'allOrders'], 
+    },
+    voucherScopeId: { type: String }, //type: mongoose.Schema.Types.ObjectId
 });
 
 module.exports = models.Voucher || model('Voucher', voucherSchema);

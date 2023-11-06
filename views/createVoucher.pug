@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Create Voucher
+  form(action="/vouchers/create", method="post")
+    label(for="name") Name:
+    input(type="text", name="name", id="name", required)
+    br
+    label(for="startDate") Start Date:
+    input(type="date", name="startDate", id="startDate", required)
+
+    label(for="expiredDate") Expired Date:
+    input(type="date", name="expiredDate", id="expiredDate", required)
+    br
+    label(for="description") Description:
+    input(type="text", name="description", id="description", required)
+    br
+    label(for="quantity") Quantity:
+    input(type="number", name="quantity", id="quantity", required)
+    br
+    label(for="paymentType") Payment:
+    input(type="text", name="paymentType", id="paymentType", required)
+    br
+    label(for="minimumOrderValue") Minimum order Value:
+    input(type="number", name="minimumOrderValue", id="minimumOrderValue", required)
+    br
+    label(for="voucherScope") Start Date:
+    select(name="voucherScope" id="voucherScope")
+      option(value="None") Chọn scope 
+      option(value="allOrders") Voucher áp dụng cho tất cả 
+      option(value="shop") Voucher shop
+      option(value="product") Voucher product
+
+    label(for="voucherScopeId") ScopeId:
+    input(type="text", name="voucherScopeId", id="voucherScopeId")
+    
+    button(type="submit") Create Voucher
